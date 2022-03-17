@@ -27,9 +27,9 @@ namespace ConsoleApp1
             double turis = 4 / 3 * Math.PI * (Math.Pow(spindulys, 3));
             Console.WriteLine($"Žemės plotas yra: {plotas} ");
 
-            double krastine1 = 10
-            double krastine2 = 15
-            double izambine = Math.Pow((Math.Pow(krastine1, 2))+ (Math.Pow(krastine2, 2)),0.5)
+            double krastine1 = 10;
+            double krastine2 = 15;
+            double izambine = Math.Pow((Math.Pow(krastine1, 2)) + (Math.Pow(krastine2, 2)), 0.5);
             Console.WriteLine($"Izambines ilgis: {izambine}" );
 
 
