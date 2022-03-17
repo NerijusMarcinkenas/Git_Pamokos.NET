@@ -22,8 +22,10 @@ namespace ConsoleApp1
             Console.WriteLine("Žemės ploto skaičiavimas");
             double spindulys = 6371 ;
 
-          double plotas =  4* Math.PI * (Math.Pow(spindulys, 2));
-            Console.WriteLine( $"Žemės plotas yra: {plotas} " );
+            double plotas =  4* Math.PI * (Math.Pow(spindulys, 2));
+            
+            double turis = 4 / 3 * Math.PI * (Math.Pow(spindulys, 3));
+            Console.WriteLine($"Žemės plotas yra: {plotas} ");
 
         }
     }
