@@ -25,13 +25,16 @@ namespace ConsoleApp1
             double plotas =  4* Math.PI * (Math.Pow(spindulys, 2));
             
             double turis = 4 / 3 * Math.PI * (Math.Pow(spindulys, 3));
-            Console.WriteLine($"Žemės plotas yra: {plotas} ");
 
             double krastine1 = 10;
             double krastine2 = 15;
             double izambine = Math.Pow((Math.Pow(krastine1, 2)) + (Math.Pow(krastine2, 2)), 0.5);
-            Console.WriteLine($"Izambines ilgis: {izambine}" );
 
+            double sum = plotas + turis + izambine;
+            double avg = sum / 3;
+
+            Console.WriteLine($"Gautu kintamuju suma: {sum}");
+            Console.WriteLine($"Gautu kintamuju vidurkis: {avg}");
 
         }
     }
