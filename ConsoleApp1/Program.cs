@@ -27,6 +27,8 @@ namespace ConsoleApp1
             double turis = 4 / 3 * Math.PI * (Math.Pow(spindulys, 3));
             Console.WriteLine($"Žemės plotas yra: {plotas} ");
 
+
+
         }
     }
 }
