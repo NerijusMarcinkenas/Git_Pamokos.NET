@@ -35,6 +35,7 @@ namespace ConsoleApp1
 
             Console.WriteLine($"Gautu kintamuju suma: {sum}");
             Console.WriteLine($"Gautu kintamuju vidurkis: {avg}");
+            Console.WriteLine(" pakoreguta");
 
         }
     }
