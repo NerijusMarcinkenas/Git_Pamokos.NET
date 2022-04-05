@@ -20,10 +20,10 @@ namespace ConsoleApp1
             Console.WriteLine("Hello World!");
 
             Console.WriteLine("Žemės ploto skaičiavimas");
-            double spindulys = 6371 ;
+            double spindulys = 6371;
 
-            double plotas =  4* Math.PI * (Math.Pow(spindulys, 2));
-            
+            double plotas = 4 * Math.PI * (Math.Pow(spindulys, 2));
+
             double turis = 4 / 3 * Math.PI * (Math.Pow(spindulys, 3));
 
             double krastine1 = 10;
@@ -36,6 +36,7 @@ namespace ConsoleApp1
             Console.WriteLine($"Gautu kintamuju suma: {sum}");
             Console.WriteLine($"Gautu kintamuju vidurkis: {avg}");
             Console.WriteLine(" pakoreguta");
+            Console.WriteLine("HI ARTUR");
 
         }
     }
