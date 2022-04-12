@@ -54,7 +54,7 @@ namespace Pamoka_11_Airplains
             
 
 
-            report.SaveAs(@"C:\Users\nerki\Documents\C# .Net kursai\Raport.xlsx");
+            report.SaveAs(@"C:...\Raport.xlsx");
             
         }
 
