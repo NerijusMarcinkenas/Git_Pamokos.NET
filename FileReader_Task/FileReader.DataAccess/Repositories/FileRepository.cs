@@ -1,4 +1,5 @@
 ﻿using FileReader.DataAccess.Entities;
+using FileReader_DataAccess.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,6 @@ public class FileRepository : IFileRepository
         _context = new FileContext();        
              
     }
-
    
     public Folder RetrieveFolder(string path)
     {
@@ -67,7 +67,6 @@ public class FileRepository : IFileRepository
         }
         _context.SaveChanges();
     }
-
   
     public void AddFolder(Folder folder)
     {

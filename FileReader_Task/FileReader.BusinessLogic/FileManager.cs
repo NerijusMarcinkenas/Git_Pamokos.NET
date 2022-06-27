@@ -1,9 +1,10 @@
-﻿using FileReader.DataAccess;
-using FileReader.DataAccess.Entities;
+﻿using FileReader.DataAccess.Entities;
 using FileReader.DataAccess.Repositories;
+using FileReader_BusinessLogic.Interfaces;
+using FileReader_DataAccess.Interfaces;
 
 namespace FileReader.BusinessLogic
-{    
+{
     public class FileManager : IFileManager
     {
 
@@ -27,7 +28,7 @@ namespace FileReader.BusinessLogic
         {
            return fileRepository.RetrieveFolder(path);
         }
-        public List<Folder> ReadFolderFolders(string path)
+        public List<Folder> ReadFolders(string path)
         {
             var directories = Directory.GetDirectories(path, "*", SearchOption.AllDirectories);
 
@@ -36,43 +37,22 @@ namespace FileReader.BusinessLogic
                 string name = Path.GetFileName(item);
                 string fullPath = Path.GetFullPath(item);
                 var folder = new Folder(name, fullPath);               
-                var files = ReadFolderFiles(folder);
+                var files = ReadFiles(folder);
+                folder.Files = files;
                 Folders.Add(folder);
             }
             return Folders;
-        }
-        //private void ReadFiles()
-        //{           
-
-        //    foreach (var folder in Folders)
-        //    {
-        //        var files = Directory.GetFiles(folder.Path);
-
-
-        //        foreach (string file in files)
-        //        {
-        //            var fileInfo = new FileInfo(file);
-        //            var name = fileInfo.Name;
-        //            var size = fileInfo.Length;
-        //            var fullPath = Path.GetFullPath(file);
-        //            var folderId = folder.Id;
-        //            var newFile = new LocalFile(name, size, fullPath, folderId);
-        //            Files.Add(newFile);
-        //            folder.Files.Add(newFile);
-        //        }  
-        //    }
-        //}
+        }     
         public Folder RetrieveLocalFolder(string path)
         {
             var name = Path.GetFileName(path);
             var folder = new Folder(name, path);             
-            var files = ReadFolderFiles(folder);
-            folder.Folders = ReadFolderFolders(path); 
+            var files = ReadFiles(folder);
+            folder.Folders = ReadFolders(path); 
             folder.Files = files;
             return folder;
-        }
-       
-        private List<LocalFile> ReadFolderFiles(Folder folder)
+        }       
+        private List<LocalFile> ReadFiles(Folder folder)
         {
             var files = Directory.GetFiles(folder.Path);
 
