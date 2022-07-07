@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 namespace FileReader.DataAccess.Repositories;
 
 public class FileRepository : IFileRepository
-{
-   
+{   
     
     private readonly FileContext _context;
     public FileRepository()
@@ -25,7 +24,6 @@ public class FileRepository : IFileRepository
         var dbFolder = _context.Folders.Include(f => f.Files).SingleOrDefault(a => a.Path == path);
         return dbFolder;
     }       
-
     public void UpdateDbFiles(Folder folder)
     {
        
@@ -66,12 +64,11 @@ public class FileRepository : IFileRepository
             AddFolder(folder);
         }
         _context.SaveChanges();
-    }
-  
-    public void AddFolder(Folder folder)
+    }  
+    private void AddFolder(Folder folder)
     {
-
         _context.Folders.Add(folder);
+        _context.SaveChanges();
     }
    
 }

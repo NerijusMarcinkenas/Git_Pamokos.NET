@@ -14,7 +14,6 @@ namespace FileReader.DataAccess
         public DbSet<Folder> Folders { get; set; }
 
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder options) =>
            options.UseSqlServer(@"Data Source = N-LENOVO\SQLEXPRESS; Initial Catalog = FilesDb; Integrated Security = True;");
 

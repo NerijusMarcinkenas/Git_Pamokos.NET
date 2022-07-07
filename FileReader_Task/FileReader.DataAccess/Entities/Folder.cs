@@ -15,7 +15,7 @@ namespace FileReader.DataAccess.Entities
         public List<Folder> Folders { get; set; } 
         public Folder(string name, string path)
         {
-            Id = Guid.NewGuid();
+         
             Name = name;
             Path = path;
             Files = new List<LocalFile>();

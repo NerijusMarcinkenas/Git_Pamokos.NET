@@ -7,9 +7,10 @@ IFileManager fileManager = new FileManager();
 Console.WriteLine("Insert folder path");
 string path = Console.ReadLine();
 
-
+// palikti viena metod BL
 var localFolder = fileManager.RetrieveLocalFolder(path);
 fileManager.RefreshDb(localFolder);
+
 
 var folder = fileManager.RetrieveDbFolder(path);
 
